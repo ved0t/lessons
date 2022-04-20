@@ -1,34 +1,36 @@
-<!DOCTYPE html>
+2<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ders-5</title>
+    <title>Diziler</title>
 </head>
 
 <body>
+    <h3>Php'de Diziler Devam</h3>
 
-    <h3>Php'de Diziler Devam </h3>
+
     <?php
 
     $isimler = array();
+
+    $isimler[] = "Ahmet";
     $isimler[] = "Mehmet";
-    $isimler[] = "Canan";
-    $isimler[0] = "Kemal";
+    $isimler[0] = "Ayşe";
     $isimler[] = "Nur";
 
     echo "<pre>";
     print_r($isimler);
-    echo "</pre><hr>";
-
+    echo "</pre>";
 
     $isimler2 = array();
-    $isimler2["isim1"] = "Mehmet";
-    $isimler2["isim2"] = "Canan";
-    $isimler2["isim3"] = "Kemal";
-    $isimler2[] = "Nur";
+
+    $isimler2["isim1"] = "Kerim";
+    $isimler2["isim2"] = "Hatice";
+    $isimler2["isim3"] = "Burcu";
+    $isimler2[] = "Hüseyin";
     $isimler2[] = "Gülcan";
 
     echo "<pre>";
@@ -36,97 +38,64 @@
     echo "</pre>";
 
 
-
-
-    /* Uygulama:
-     Çıktı : Havvanur isimli öğrencinin web programlama, veri tabanı, mobil programlama dersleri vardır.  */
     $ogrenciDetay = array(
         "id"        => 1,
-        "adi"       => "Havva",
+        "adi"       => "Nurullah",
         "soyadi"    => "Yıldız",
         "bolum"     => "Bilgisayar",
-        "yas"       => 20,
+        "yas"       => "25",
         "dersler"   => array(
-            "ders1" => "Web Programlama",
-            "ders2" => "Veri Tabanı",
+            "ders1" => "Veri Tabanı",
+            "ders2" => "Web Programlama",
             "ders3" => "Mobil Programlama"
         ),
-        "sınıf"     => 2,
-        "memleket"  => "İzmir"
+        "sinif"     => "2"
     );
+    /* Uygulama: Öğrenci Detayı Dizisini Alt Alta döngüleri kullanarak yazdırınız. */
 
     echo "<pre>";
     print_r($ogrenciDetay);
-    echo "</pre> ";
+    echo "</pre>";
 
-    echo "$ogrenciDetay[adi] $ogrenciDetay[soyadi] isimli öğrencinin " .
-        $ogrenciDetay["dersler"]["ders1"] .
-        $ogrenciDetay["dersler"]["ders2"] .
-        $ogrenciDetay["dersler"]["ders3"] . " dersleri vardır. ";
+    echo "Öğrencinin Dersleri: <br>";
 
-    echo "<hr>";
-    /* 
-    Uygulama:
-    Aşağıdaki dizinin her elamnı bir öğrenci detayına karşılık gelmektedir.
-    Bu öğrencilere ait detayları aşağıdaki şekilde satır satır bir tablo oluşturup içerisine yazdırınız.
+    echo $ogrenciDetay["dersler"]["ders1"] . "<br>";
+    echo $ogrenciDetay["dersler"]["ders2"] . "<br>";
+    echo $ogrenciDetay["dersler"]["ders3"] . "<br>";
 
-    #id    #adi     #soyadi   #bölüm         #dersler               #sınıf
-    1     havva     Yıldız    Bilgisayar     Web Programlama           2
-                                             Veri Tabanı
-                                             Mobil Programlama
-
-    */
+    /* Uygulama: Öğrenci Detayları Dizisindeki Her Öğrencinin Detaylarını Alt Alta yazdırınız. */
     $ogrenciDetaylari = array(
-        "ogr1" => array(
+        "ogrenci1" => array(
             "id"        => 1,
-            "adi"       => "Havva",
+            "adi"       => "Nurullah",
             "soyadi"    => "Yıldız",
             "bolum"     => "Bilgisayar",
-            "yas"       => 20,
+            "yas"       => "25",
             "dersler"   => array(
-                "ders1" => "Web Programlama",
-                "ders2" => "Veri Tabanı",
+                "ders1" => "Veri Tabanı",
+                "ders2" => "Web Programlama",
                 "ders3" => "Mobil Programlama"
             ),
-            "sınıf"     => 2,
-            "memleket"  => "İzmir"
+            "sinif"     => "2"
         ),
-        "ogr2" => array(
-            "id"        => 2,
-            "adi"       => "Kemal",
-            "soyadi"    => "Yıldız",
-            "bolum"     => "Bilgisayar",
-            "yas"       => 20,
+        "ogrenci2" => array(
+            "id"        => 1,
+            "adi"       => "Ayşen",
+            "soyadi"    => "Güler",
+            "bolum"     => "Makine",
+            "yas"       => "22",
             "dersler"   => array(
-                "ders1" => "Donanım",
-                "ders2" => "Sunucu",
-                "ders3" => "Mobil Programlama"
+                "ders1" => "Matematik",
+                "ders2" => "Sayı Teorileri",
+                "ders3" => "Model Geliştirme"
             ),
-            "sınıf"     => 2,
-            "memleket"  => "İzmir"
-        ),
-        "ogr3" => array(
-            "id"        => 3,
-            "adi"       => "Kerim",
-            "soyadi"    => "Yıldız",
-            "bolum"     => "Matematik",
-            "yas"       => 25,
-            "dersler"   => array(
-                "ders1" => "Cebir",
-                "ders2" => "Homotopi Teori",
-                "ders3" => "Homolojik Cebir"
-            ),
-            "sınıf"     => 4,
-            "memleket"  => "Afyon"
+            "sinif"     => "4"
         )
     );
 
-    echo "<pre>";
-    print_r($ogrenciDetaylari);
-    echo "</pre>";
-
     ?>
 
+    <hr>
     <h3>Koşul İfadeleri (If-Else)</h3>
     <p>İf-Else Bloklarında öncelikle koşul belirtilir ve sonraki dallanma koşula göre devam eder.</p>
 
@@ -160,22 +129,21 @@
         <li>Else son kapanış koşuludur. (Herhangi bir şart belirtilmez. Hiçbir önkoşul gerçekleşmediğinde çalışacak son koşulu ifade eder.)</li>
     </ol>
 
-
-
     <?php
 
-  /*   if (condition) {
+    /*     if (condition) {
         # code...
-    } elseif (condition) {
+    }elseif (condition) {
         # code...
-    } elseif (condition) {
+    }elseif (condition) {
         # code...
-    } elseif (condition) {
+    }elseif (condition) {
         # code...
-    } else {
+    }else {
         # code...
     } */
-    
+
+
     $sayi1 = 123;
     $sayi2 = 345;
     $metin = "Adü";
@@ -256,12 +224,13 @@
     2-Rasgele 0-100 arasında üretilen değerin 50'den küçük olduğu durumlarda kaldınız, büyükse geçtiniz yazdırınız.
     3-Doğum yılına göre 18 yaşından büyük olanların ehliyet alabileceğini kontrol eden if bloğunu yazınız. */
 
-    
-
-
     ?>
 
 
+
+
+
+    <br><br> <br><br>
 </body>
 
 </html>
